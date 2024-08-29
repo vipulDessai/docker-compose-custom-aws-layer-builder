@@ -1,0 +1,19 @@
+FROM amazonlinux:2023
+
+WORKDIR /
+
+RUN yum update -y
+
+# Install CDK and Frontend
+RUN yum install -y curl zip gzip tar git --skip-broken
+
+RUN mkdir -p /usr/local/nvm
+ENV NVM_DIR /usr/local/nvm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+
+# node 16
+ENV NODE_VERSION_16 v16.17.0
+RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION_16 && nvm use --delete-prefix $NODE_VERSION_16"
+
+ENV NODE_VERSION_18 v18.17.1
+RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION_18 && nvm use --delete-prefix $NODE_VERSION_18"
