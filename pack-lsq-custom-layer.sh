@@ -2,7 +2,7 @@
 
 packages=`cat npm-package-list.txt`
 
-publicModulesZipFileName="lapp-custom-npm-modules.zip"
+publicModulesZipFileName="aws-lambda-custom-npm-modules.zip"
 publicModulesSrcFolderName="nodejs"
 npmModuleFolderName="node_modules"
 
@@ -40,8 +40,7 @@ InstallNPM () {
     cd ../../
 }
 
-InstallNPM $NODE_VERSION_16
-InstallNPM $NODE_VERSION_18
+InstallNPM $NODE_VERSION_20
 
 zip -r "$publicModulesZipFileName" "$publicModulesSrcFolderName"
 

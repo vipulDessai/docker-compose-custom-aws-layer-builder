@@ -17,3 +17,6 @@ RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION_16 && nvm 
 
 ENV NODE_VERSION_18 v18.17.1
 RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION_18 && nvm use --delete-prefix $NODE_VERSION_18"
+
+ENV NODE_VERSION_20 v20.14.0
+RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION_20 && nvm use --delete-prefix $NODE_VERSION_20"
