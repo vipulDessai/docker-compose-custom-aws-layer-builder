@@ -40,7 +40,8 @@ InstallNPM () {
     cd ../../
 }
 
-InstallNPM $NODE_VERSION_20
+InstallNPM $NODE_VERSION_16
+InstallNPM $NODE_VERSION_18
 
 zip -r "$publicModulesZipFileName" "$publicModulesSrcFolderName"
 

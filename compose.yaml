@@ -1,0 +1,12 @@
+services:
+  pack_lapp_custom_layer:
+    build: ./docker/
+    command: ['/bin/bash', './pack-lsq-custom-layer.sh']
+    environment:
+      - TZ=Etc/GMT
+    volumes:
+      - $PWD:$PWD
+      - ~/.ssh:/root/.ssh
+    working_dir: $PWD
+    ports:
+      - "8080:8080"
